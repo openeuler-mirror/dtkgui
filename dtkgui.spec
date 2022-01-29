@@ -1,6 +1,6 @@
 Name:           dtkgui
 Version:        5.2.2.1
-Release:        2
+Release:        3
 Summary:        Deepin dtkgui
 License:        GPLv3
 URL:            https://shuttle.deepin.com/cache/repos/apricot/release-candidate/RERFLWR0a2NvcmXmm7TmlrA1Njg/pool/main/d/dtkgui/
@@ -12,6 +12,7 @@ BuildRequires:  gcc-c++
 BuildRequires:  annobin
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(gsettings-qt)
+BuildRequires:  qt5-qtbase-private-devel
 
 
 %description
@@ -58,6 +59,9 @@ export PATH=%{_qt5_bindir}:$PATH
 %{_libdir}/cmake/DtkGui/
 
 %changelog
+* Sat Jan 29 2022 liweigang <liweiganga@uniontech.com> - 5.2.2.1-3
+- fix build error
+
 * Thu Jul 15 2021 weidong <weidong@uniontech.com> - 5.2.2.1-2
 - Format spec
 
