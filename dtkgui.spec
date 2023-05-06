@@ -1,5 +1,5 @@
 Name:           dtkgui
-Version:        5.4.10
+Version:        5.5.18
 Release:        1
 Summary:        Deepin dtkgui
 License:        LGPLv3+
@@ -8,7 +8,7 @@ URL:            https://github.com/linuxdeepin/dtkgui
 %if 0%{?fedora}
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 %else
-Source0:        %{name}_%{version}.orig.tar.xz
+Source0:        %{name}-%{version}.orig.tar.xz
 %endif
 BuildRequires:  qt5-qtx11extras-devel
 BuildRequires:  dtkcore-devel
@@ -18,6 +18,8 @@ BuildRequires:  annobin
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(gsettings-qt)
 BuildRequires:  qt5-qtbase-private-devel
+BuildRequires:  gtest-devel
+BuildRequires:  gmock-devel
 %{?_qt5:Requires: %{_qt5}%{?_isa} = %{_qt5_version}}
 
 %description
@@ -53,7 +55,7 @@ export PATH=%{_qt5_bindir}:$PATH
 %{_libdir}/lib%{name}.so.5*
 %{_libexecdir}/dtk5/deepin-gui-settings
 %{_libexecdir}/dtk5/taskbar
-%{_sysconfdir}/dbus-1/system.d/com.deepin.dtk.FileDrag.conf
+%{_libexecdir}/dtk5/dde-kwin-debug
 
 %files devel
 %{_includedir}/libdtk-*/
@@ -63,6 +65,9 @@ export PATH=%{_qt5_bindir}:$PATH
 %{_libdir}/lib%{name}.so
 
 %changelog
+* Thu Mar 23 2023 liweiganga <liweiganga@uniontech.com> - 5.5.18-1
+- update to 5.5.18
+
 * Tue Jul 19 2022 konglidong <konglidong@uniontech.com> - 5.4.10-1
 - Update to 5.4.10
 
